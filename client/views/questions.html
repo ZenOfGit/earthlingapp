@@ -1,0 +1,29 @@
+<div class="panel panel-default" ng-init="getQuestions">
+    <div class="panel-heading">
+        <h3 class="panel-title">Question of the day: {{question.question_text}}</h3>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div>
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <div ng-init="getAnswers">
+                            <form name="answer-getter" ng-submit="updateAnswer">
+                                <div ng-repeat="choice in answers">
+                                    <div class="radio">
+                                        <label><input type="radio" ng-model="choice.answer_text">{{choice.answer_text}}</label>
+                                    </div>
+                                </div>
+                                <input type="submit" value="Submit">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div ng-repeat="choice in answers">
+                           Number chosen:{{choice.count}} - {{choice.answer_text}}
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
