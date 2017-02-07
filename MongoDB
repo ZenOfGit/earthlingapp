@@ -4,7 +4,7 @@ use earthlingdb
 
 db.createCollection('questions')
 
-db.answers.insert({question_text:'Which relaxation method to you prefer?'})
+db.questions.insert({question_text:'Which relaxation method to you prefer?'})
 
 db.createCollection('answers')
 
