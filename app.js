@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
 });
 
 // Get Question Route
-app.get('/api/questions', (req, res) => {
+app.get('/data/questions.json', (req, res) => {
     Question.getQuestions((err, questions) => {
         if(err){
             throw err;
@@ -34,7 +34,7 @@ app.get('/api/questions', (req, res) => {
 });
 
 // Get Answer Route
-app.get('/api/answers', (req, res) => {
+app.get('/data/answers.json', (req, res) => {
     Answer.getAnswers((err, answers) => {
         if(err){
             throw err;

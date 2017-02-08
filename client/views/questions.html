@@ -1,6 +1,12 @@
-<div class="panel panel-default" ng-init="getQuestions">
+<div class="panel panel-default" ng-init="getAnswers">
     <div class="panel-heading">
-        <h3 class="panel-title">Question of the day: {{question.question_text}}</h3>
+        <h3 class="panel-title">Question of the day: {{1+1}}{{questions.question_text}}</h3>
+        {{question.question_text}}
+        {{response.question_text}}
+    </div>
+                                 <div ng-repeat="choice in answer">   
+    {{choice.answer_text}}
+             {{answer.answer_text}}                        
     </div>
     <div class="panel-body">
         <div class="row">
@@ -9,7 +15,7 @@
                     <div class="col-md-6">
                         <div ng-init="getAnswers">
                             <form name="answer-getter" ng-submit="updateAnswer">
-                                <div ng-repeat="choice in answers">
+                                <div ng-repeat="choice in answer">
                                     <div class="radio">
                                         <label><input type="radio" ng-model="choice.answer_text">{{choice.answer_text}}</label>
                                     </div>
@@ -19,11 +25,13 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div ng-repeat="choice in answers">
+                        <div ng-repeat="choice in answer">
                            Number chosen:{{choice.count}} - {{choice.answer_text}}
+                            Number chosen:{{answer.count}} - {{answer.answer_text}}
                     </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>

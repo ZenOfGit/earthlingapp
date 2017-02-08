@@ -6,8 +6,8 @@ myApp.controller('AnswersController', ['$scope', '$http', '$location', '$routePa
 
 // Get Answers
 	$scope.getAnswers = function(){
-		$http.get('/api/answers').then(function(response){
-			$scope.answers = response;
+		$http.get('./data/answers.json').then(function(response){
+			$scope.answer = response;
 		});
 	}
 
