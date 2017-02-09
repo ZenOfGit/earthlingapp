@@ -5,11 +5,7 @@ myApp.config(function($routeProvider){
 		controller:'QuestionsController',
 		templateUrl: 'views/questions.html'
 	})
-	.when('/question', {
-		controller:'QuestionsController',
-		templateUrl: 'views/questions.html'
-	})
-	.when('/question/results:id',{
+	.when('/questions', {
 		controller:'QuestionsController',
 		templateUrl: 'views/questions.html'
 	})

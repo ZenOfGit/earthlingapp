@@ -16,9 +16,3 @@ const Question = module.exports = mongoose.model('Question', questionSchema);
 module.exports.getQuestions = (callback, limit) => {
 	Question.find(callback).limit(limit);
 }
-
-// Get Question by Id - cunnently usused
-//module.exports.getQuestionById = (id, callback) => {
-//	Question.findById(id, callback);
-//}
-
