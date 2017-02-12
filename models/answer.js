@@ -31,7 +31,7 @@ module.exports.updateAnswer = (id, answer, options, callback) => {
 	var update = {
 		answer_text: answer.answer_text,
 		aid: answer.aid,
-		count: answer.count
+		count: answer.count +1
 	}
 	Answer.findOneAndUpdate(query, update, options, callback);
 }

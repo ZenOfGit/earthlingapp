@@ -1,0 +1,10 @@
+<form name="answer-getter">
+<h2>Click to vote!</h2>
+<br>
+    <div ng-repeat="answer in answerList">
+        <td>
+            <input type="button" value="Vote" ng-click='incrementCount(answer)'>
+            <label>{{answer.answer_text}}</label>
+        </td>
+    </div>
+</form>

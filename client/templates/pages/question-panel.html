@@ -1,0 +1,21 @@
+<div class="panel panel-primary" ng-controller="mainCtrl">
+    <div class="panel-heading">
+            <div ng-repeat="question in todaysQuestion">
+        <h3 class="panel-title">{{question.question_text}}</h3>
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div>
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <answer-list></answer-list>
+                    </div>
+                    <div class="col-md-6">
+                        <result-list></result-list>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
