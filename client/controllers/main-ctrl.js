@@ -19,6 +19,18 @@ app.controller('mainCtrl', ['$scope','$http', 'answers',
         
         // bind conroller variable to factory variable
         $scope.answerList = answers.answers;
+        $scope.my = { choice : '' };
+        $scope.checkoptions = function (choice) {
+            var details = [];
+            choice.count +=1;
+            if ($scope.selectedAnswer!=undefined)
+                $scope.msg = 'Selected Value: ' + $scope.selectedAnswer.aid;
+            else
+                $scope.msg = 'Please choose an option';
+            
+        };
+//        $scope.incrementCount = function (ichoice) {
+//            choice.count += 1;
 
     $http.get('/api/questions').then(function(qresponse) {
         $scope.todaysQuestion = qresponse.data/*.records*/;
@@ -36,7 +48,8 @@ app.controller('mainCtrl', ['$scope','$http', 'answers',
 //		});
 //	};
         
-//   $http.put('/client/assets/data/answers.json').then(function(apresponse) {
+//   $http.put('/api/answers').then(function(apresponse) {
+//        $scope.answerList = apresponse.data;
         $scope.incrementCount = function (answer) {
             answer.count += 1;
         };
