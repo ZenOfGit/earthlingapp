@@ -15,7 +15,7 @@ var Question = require('./models/question');
 var Answer = require('./models/answer');
 
 // Connect to mongoose
-mongoose.connect('mongodb://localhost/earthlingdb');
+mongoose.connect('mongodb://questionman:D0ct0rBucci1313@ds157559.mlab.com:57559/heroku_zzt2lfq9');
 var db = mongoose.connection;
 
 // Home route
