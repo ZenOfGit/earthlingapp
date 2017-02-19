@@ -1,1 +1,1 @@
-var app = angular.module('qotd', [/*'ui.router'*/]);
+var app = angular.module('qotd', ['ngRoute']);

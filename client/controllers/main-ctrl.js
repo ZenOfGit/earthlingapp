@@ -1,4 +1,3 @@
-
 app.factory('answers', [function () {
     var o = {
         answers: []
@@ -6,32 +5,25 @@ app.factory('answers', [function () {
     return o;
 }]);
 
-app.controller('mainCtrl', ['$scope','$http', 'answers',
+app.controller('mainCtrl', ['$scope','$http', '$location', '$routeParams', 'answers',
 
-    function($scope, $http, answers){
-        //$scope.todaysQuestion = 'Which method of relaxation do you prefer?';
-        //$scope.answerList = [
-        //    {answer_text: 'Soothing music', qid: '1', votes: 0},
-        //    {answer_text: 'Warm bath', qid: '2', votes: 0},
-        //    {answer_text: 'Tai Chi', qid: '3', votes: 0},
-        //    {answer_text: 'Chai Tea', qid: '4', votes: 0}
-        //];
+    function($scope, $http, $location, $routeParams, answers){
         
         // bind conroller variable to factory variable
         $scope.answerList = answers.answers;
-        $scope.my = { choice : '' };
-        $scope.checkoptions = function (choice) {
-            var details = [];
-            choice.count +=1;
-            if ($scope.selectedAnswer!=undefined)
-                $scope.msg = 'Selected Value: ' + $scope.selectedAnswer.aid;
-            else
-                $scope.msg = 'Please choose an option';
-            
-        };
-//        $scope.incrementCount = function (ichoice) {
-//            choice.count += 1;
 
+/*	$scope.getQuestions = function(){
+		$http.get('/api/questions').then(function(response){
+			$scope.todaysQuestion = response.data;
+		});
+	}
+    
+	$scope.getAnswers = function(){
+		$http.get('/api/answers').then(function(response){
+			$scope.answerList = response.data;
+		});
+	} */   
+        
     $http.get('/api/questions').then(function(qresponse) {
         $scope.todaysQuestion = qresponse.data/*.records*/;
     });
@@ -48,11 +40,12 @@ app.controller('mainCtrl', ['$scope','$http', 'answers',
 //		});
 //	};
         
-//   $http.put('/api/answers').then(function(apresponse) {
-//        $scope.answerList = apresponse.data;
+//   $http.put('/api/answers/:_id').then(function(apresponse) {
+//        $scope.answerList = aresponse.data/*.records*/;
+//    });
+        
         $scope.incrementCount = function (answer) {
             answer.count += 1;
         };
-//    });
-}]);
 
+}]);
