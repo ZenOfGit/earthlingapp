@@ -56,7 +56,7 @@ app.put('/api/answers/:_id', (req, res) => {
 });
 
 // port chane for Heroku
-var port = process.env.PORT || 3000
+var port = process.env.PORT || 3000;
 
 // Server
 app.listen(port, fucntion(){
