@@ -59,6 +59,8 @@ app.put('/api/answers/:_id', (req, res) => {
 var port = process.env.PORT || 3000;
 
 // Server
-app.listen(port, fucntion(){
+app.listen(port);
+
+/*, fucntion(){
 console.log('Running on port ' + port);
-});
+});*/
