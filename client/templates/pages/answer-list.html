@@ -4,7 +4,7 @@
         <br>
         <div ng-repeat="answer in answerList">
             <td>
-                <input type="button" value="Vote" ng-click='incrementCount(answer)'>
+<!--                <input type="button" value="Vote" ng-click='incrementCount(answer)'>-->
                 <input type="radio" ng-value="answer"
               id="{{answer.aid}}" name="answer.aid" ng-model="$parent.answer" />
                 <label>{{answer.answer_text}}</label>
