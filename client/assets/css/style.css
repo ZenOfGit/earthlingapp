@@ -6,4 +6,9 @@ body {
     margin-right: 25px;
     margin-left: 25px;
 }
-/* ========== Custom styles for radio and checkbox =============== */
+
+.fixed-panel {
+  min-height: 220;
+  max-height: 220;
+  overflow-y: scroll;
+}

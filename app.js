@@ -47,7 +47,7 @@ app.get('/api/answers', (req, res) => {
 app.put('/api/answers/:_id', (req, res) => {
     var id = req.params._id;
     var answer = req.body;
-    Answer.updateAnswer(id, answer, {}, (err, answers) => {
+    Answer.updateAnswer(id, answer, {}, (err, answer) => {
         if(err){
             throw err;
         }

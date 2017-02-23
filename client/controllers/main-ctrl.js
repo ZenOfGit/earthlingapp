@@ -39,9 +39,16 @@ app.controller('mainCtrl', ['$scope','$http', '$location', '$routeParams', 'answ
 //             answer.count += 1;
 //		});
 //	};
+	$scope.updateAnswer = function(){
+		var id = $routeParams.id;
+		$http.put('/api/answers/'+id, $scope.answer).then(function(response){
+			window.location.href='#/answers';
+		});
+	}        
+        
         
 //   $http.put('/api/answers/:_id').then(function(apresponse) {
-//        $scope.answerList = aresponse.data/*.records*/;
+//        $scope.answer = aresponse.data;
 //    });
         
         $scope.incrementCount = function (answer) {

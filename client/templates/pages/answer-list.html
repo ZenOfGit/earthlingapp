@@ -6,12 +6,14 @@
             <td>
                 <input type="button" value="Vote" ng-click='incrementCount(answer)'>
                 <input type="radio" ng-value="answer"
-              id="{{answer.aid}}" name="answer.aid" ng-model="$parent.selectedAnswer" />
+              id="{{answer.aid}}" name="answer.aid" ng-model="$parent.answer" />
                 <label>{{answer.answer_text}}</label>
             </td>
         </div><br />
         <input type="button" id="btnClick" value="Submit" ng-click="checkoptions(answerList)" /><br /><br />
-
+        <div class="pull-right">
+            <a href="#/results">Results</a>
+        </div>
     </div>
 </form>
 
